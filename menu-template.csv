@@ -1,7 +1,9 @@
-name,category,description,price,image,badge,available
-Personalised Chocolate Bars,Chocolate Bars,"Customised chocolate bars with names and messages",Price on request,,Personalised,Yes
-Curated Gift Hampers,Gift Hampers,"Thoughtful assorted chocolate gifts",Price on request,,Gift favourite,Yes
-Chocolate Brownies,Brownies,"Rich handmade brownies",Price on request,,Handmade,Yes
-Wedding Chocolate Giveaways,Occasion Gifts,"Custom chocolates for wedding guests",Price on request,,Made to order,Yes
-Nikah and Tabarruk Gifts,Occasion Gifts,"Personalised nikah gifting",Price on request,,Customised,Yes
-Birthday Chocolate Gifts,Chocolate Bars,"Personalised birthday chocolate bars",Price on request,,Birthday gifting,Yes
+"name","category","description","price","image","badge","available"
+"Personalised Name Chocolate Bar","Chocolate Bars","Custom name or message on a handmade chocolate bar","250","","Personalised","Yes"
+"Classic Assorted Chocolate Box","Gift Hampers","Assorted handmade chocolates in a gifting box","499","","Bestseller","Yes"
+"Premium Celebration Hamper","Gift Hampers","Customised chocolate hamper for birthdays and occasions","799","","Gift idea","Yes"
+"Fudgy Chocolate Brownies","Brownies","Rich chocolate brownies, baked fresh to order","350","","Freshly made","Yes"
+"Wedding Chocolate Favours","Occasion Gifts","Personalised chocolate favours for wedding guests","299","","Custom order","Yes"
+"Nikah Tabarruk Chocolates","Occasion Gifts","Custom chocolate gifts for Nikah celebrations","299","","Special occasions","Yes"
+"Birthday Chocolate Gift Box","Gift Hampers","Personalised chocolate selection for birthdays","599","","Birthday favourite","Yes"
+"Chocolate Thank You Cards","Chocolate Bars","Custom chocolate card giveaways for events","250","","Personalised","Yes"

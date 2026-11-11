@@ -1,9 +1,9 @@
-"name","category","description","price","image","badge","available"
-"Personalised Name Chocolate Bar","Chocolate Bars","Custom name or message on a handmade chocolate bar","250","","Personalised","Yes"
-"Classic Assorted Chocolate Box","Gift Hampers","Assorted handmade chocolates in a gifting box","499","","Bestseller","Yes"
-"Premium Celebration Hamper","Gift Hampers","Customised chocolate hamper for birthdays and occasions","799","","Gift idea","Yes"
-"Fudgy Chocolate Brownies","Brownies","Rich chocolate brownies, baked fresh to order","350","","Freshly made","Yes"
-"Wedding Chocolate Favours","Occasion Gifts","Personalised chocolate favours for wedding guests","299","","Custom order","Yes"
-"Nikah Tabarruk Chocolates","Occasion Gifts","Custom chocolate gifts for Nikah celebrations","299","","Special occasions","Yes"
-"Birthday Chocolate Gift Box","Gift Hampers","Personalised chocolate selection for birthdays","599","","Birthday favourite","Yes"
-"Chocolate Thank You Cards","Chocolate Bars","Custom chocolate card giveaways for events","250","","Personalised","Yes"
+name,category,description,price,image,badge,available
+Personalised Name Chocolate Bar,Chocolate Bars,Custom name or message on a handmade chocolate bar,₹250,,Personalised,Yes
+Classic Assorted Chocolate Box,Gift Hampers,Assorted handmade chocolates in a gifting box,₹499,,Bestseller,Yes
+Premium Celebration Hamper,Gift Hampers,Customised chocolate hamper for birthdays and occasions,₹799,,Gift idea,Yes
+Fudgy Chocolate Brownies,Brownies,"Rich chocolate brownies, baked fresh to order",₹350,,Freshly made,Yes
+Wedding Chocolate Favours,Occasion Gifts,Personalised chocolate favours for wedding guests,₹299,,Custom order,Yes
+Nikah Tabarruk Chocolates,Occasion Gifts,Custom chocolate gifts for Nikah celebrations,₹299,,Special occasions,Yes
+Birthday Chocolate Gift Box,Gift Hampers,Personalised chocolate selection for birthdays,₹599,,Birthday favourite,Yes
+Chocolate Thank You Cards,Chocolate Bars,Custom chocolate card giveaways for events,₹250,,Personalised,Yes

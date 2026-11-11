@@ -1,0 +1,53 @@
+name: Sync Sweet n Simple menu from Google Sheets
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: menu-sync
+  cancel-in-progress: false
+
+jobs:
+  sync-menu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Download published menu CSV
+        env:
+          MENU_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTCISu6IfbMr63ArbHdTTUhD-DWwiM7VRp9VSdUPFKmfzxjzaPqWq4JOVXiDfbEtDKeigcJpf3wQPH_/pub?gid=1515176514&single=true&output=csv"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --connect-timeout 15 --max-time 90 --silent --show-error "$MENU_URL" -o /tmp/sweet-menu.csv
+          python3 - <<'PY'
+          import csv
+          with open('/tmp/sweet-menu.csv', newline='', encoding='utf-8-sig') as f:
+              r = csv.DictReader(f)
+              headers = set(r.fieldnames or [])
+              required = {'name','category','description','price','image','badge','available'}
+              assert required.issubset(headers), f'Unexpected CSV columns: {headers}'
+              rows = list(r)
+              assert rows and any(x.get('name','').strip() for x in rows), 'No products in menu'
+              print(f'Validated {len(rows)} rows from published Google Sheet')
+          PY
+          cp /tmp/sweet-menu.csv menu-template.csv
+
+      - name: Commit menu only when changed
+        run: |
+          if git diff --quiet -- menu-template.csv; then
+            echo "Menu already up-to-date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add menu-template.csv
+          git commit -m "Sync product catalogue from published Google Sheet"
+          git push

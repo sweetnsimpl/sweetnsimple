@@ -15,7 +15,8 @@ After enabling Pages, the site will be at https://sweetnsimpl.github.io/sweetnsi
 1. Create a Google Sheet and import `menu-template.csv`.
 2. Update product rows: `name`, `category`, `description`, `price`, `image`, `badge`, `available`.
 3. Under **File → Share → Publish to web**, select the **menu tab** and **Comma-separated values (.csv)**. Publish and copy the CSV URL.
-4. Edit `index.html` on GitHub, find `const CONFIG=` near the bottom, and paste the published CSV URL into `googleSheetCsvUrl` (between the quotes), then commit the change.
+4. The repository has an automatic GitHub Actions workflow at `.github/workflows/sync-menu.yml` configured with the published CSV URL. It copies the Google Sheet to `menu-template.csv` on a 30-minute schedule. The website reads the GitHub copy to avoid cross-origin errors. You can also trigger the `Sync Sweet n Simple menu from Google Sheets` workflow manually from the Actions tab.
+5. After editing the Sheet, allow for Sheets publish caching plus up to 30 minutes for the scheduled sync. Google and GitHub Pages caching may add delay.
 
 Sample configuration:
 ```js
@@ -34,7 +35,7 @@ const CONFIG={
 
 Set `available=No` to hide a product.
 
-**Note:** The published CSV is public. Do not include customer names, phone numbers or order details. Google may cache published CSV updates, so menu changes can take time to appear. If cross-origin fetch is blocked, use an endpoint that supports CORS.
+**Note:** The published CSV and synced catalogue are public. Do not include customer names, phone numbers or order details. Google may cache published CSV updates, so menu changes can take time to appear. If cross-origin fetch is blocked, use an endpoint that supports CORS.
 
 ## Before sharing with customers
 - Add your business WhatsApp number
